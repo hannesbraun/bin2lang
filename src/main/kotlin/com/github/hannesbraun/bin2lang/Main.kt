@@ -2,6 +2,7 @@ package com.github.hannesbraun.bin2lang
 
 
 import com.github.hannesbraun.bin2lang.writers.CWriter
+import com.github.hannesbraun.bin2lang.writers.KotlinWriter
 import java.io.File
 import java.nio.file.Files
 
@@ -18,6 +19,7 @@ fun main(args: Array<String>) {
 
     val writer = when (language) {
         "c" -> CWriter(target)
+        "kotlin" -> KotlinWriter(target)
         else -> {
             System.err.println("ERROR: unknown target: ${args[0]}\n")
             return
