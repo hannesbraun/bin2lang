@@ -5,10 +5,9 @@ class JavaWriter(name: String) : Writer(name, "java") {
         val langStrBuilder = StringBuilder()
 
         langStrBuilder.append("public class $name {\n    ")
-        langStrBuilder.append("public static final byte[] BYTES = new byte[]{\n        ")
+        langStrBuilder.append("public static final byte[] BYTES = new byte[] {\n        ")
         for ((i, byte) in bytes.withIndex()) {
-            val hexString = byte.toString(16).padStart(2, '0')
-            langStrBuilder.append("0x$hexString")
+            langStrBuilder.append("${byte.toString(10)}")
 
             if (i + 1 < bytes.size) {
                 langStrBuilder.append(",")
@@ -20,7 +19,7 @@ class JavaWriter(name: String) : Writer(name, "java") {
                 }
             }
         }
-        langStrBuilder.append("\n    }\n}\n")
+        langStrBuilder.append("\n    };\n}\n")
 
         return langStrBuilder.toString()
     }
