@@ -1,4 +1,4 @@
-package com.github.hannesbraun.bin2lang.writers
+package writers
 
 class KotlinWriter(name: String) : Writer(name, "kt") {
     override fun toLang(): String {

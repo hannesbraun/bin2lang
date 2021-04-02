@@ -1,4 +1,4 @@
-package com.github.hannesbraun.bin2lang.writers
+package writers
 
 class CWriter(name: String) : Writer(name, "h") {
     override fun toLang(): String {

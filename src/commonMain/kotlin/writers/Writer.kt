@@ -1,4 +1,4 @@
-package com.github.hannesbraun.bin2lang.writers
+package writers
 
 abstract class Writer(name: String, protected val fileExtension: String) {
     protected val name = name.replace("\\s".toRegex(), "")

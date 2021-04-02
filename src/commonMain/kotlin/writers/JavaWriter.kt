@@ -1,4 +1,4 @@
-package com.github.hannesbraun.bin2lang.writers
+package writers
 
 class JavaWriter(name: String) : Writer(name, "java") {
     override fun toLang(): String {

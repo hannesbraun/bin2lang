@@ -1,10 +1,7 @@
 plugins {
-    kotlin("jvm") version "1.4.30"
-    application
-    id("com.github.johnrengelman.shadow") version "6.1.0"
+    kotlin("multiplatform") version "1.4.32"
 }
 
-group = "com.github.hannesbraun"
 version = "1.0.0-SNAPSHOT"
 
 repositories {
@@ -12,12 +9,40 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("bom"))
-    implementation(kotlin("stdlib"))
+    kotlin("bom")
+    kotlin("stdlib")
 }
 
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "com.github.hannesbraun.bin2lang.MainKt"
+kotlin {
+    macosX64 {
+        binaries {
+            executable()
+        }
+    }
+    linuxX64 {
+        binaries {
+            executable()
+        }
+    }
+    mingwX64 {
+        binaries {
+            executable()
+        }
+    }
+
+    sourceSets {
+        val commonMain by getting
+        val desktopMain by creating {
+            dependsOn(commonMain)
+        }
+        val linuxX64Main by getting {
+            dependsOn(desktopMain)
+        }
+        val mingwX64Main by getting {
+            dependsOn(desktopMain)
+        }
+        val macosX64Main by getting {
+            dependsOn(desktopMain)
+        }
     }
 }
