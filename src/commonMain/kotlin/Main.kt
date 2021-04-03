@@ -1,8 +1,8 @@
 import writers.*
 
 expect fun readFile(name: String): ByteArray
-expect fun writeFile(name: String, data: String): Unit
-expect fun printlnErr(string: String?): Unit
+expect fun writeFile(name: String, data: String)
+expect fun printlnErr(string: String?)
 
 fun main(args: Array<String>) {
     val args1 = try {

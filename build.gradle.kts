@@ -8,11 +8,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    kotlin("bom")
-    kotlin("stdlib")
-}
-
 kotlin {
     macosX64 {
         binaries {
