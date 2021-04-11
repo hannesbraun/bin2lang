@@ -3,6 +3,7 @@
 rm randData
 rm cOutFile
 rm javaOutFile
+rm kotlinOutFile
 
 bash randFile.sh
 
@@ -26,7 +27,16 @@ make
 java Main
 cd -
 
+$BIN2LANG kotlin randData RandomData
+rm kotlin/RandomData.kt
+mv RandomData.kt kotlin
+cd kotlin
+make
+kotlin MainKt
+cd -
+
 # Compare results (manually)
 shasum -a 512 randData
 shasum -a 512 cOutFile
 shasum -a 512 javaOutFile
+shasum -a 512 kotlinOutFile
