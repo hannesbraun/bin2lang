@@ -6,7 +6,7 @@ class JavaWriter(name: String) : Writer(name, "java") {
 
         langStrBuilder.append("public class $name {\n    ")
         langStrBuilder.append("public static final byte[] BYTES = new byte[] {\n        ")
-        for ((i, byte) in bytes.withIndex()) {
+        for ((i, byte) in bytes.toByteArray().withIndex()) {
             langStrBuilder.append("${byte.toString(10)}")
 
             if (i + 1 < bytes.size) {
