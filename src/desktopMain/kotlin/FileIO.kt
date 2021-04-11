@@ -1,7 +1,7 @@
 import platform.posix.*
 import kotlinx.cinterop.*
 
-actual fun readFile(name: String): ByteArray {
+actual fun readFile(name: String): UByteArray {
     val file = fopen(name, "rb")
     fseek(file, 0, SEEK_END)
     val fileSize = ftell(file).toInt()
@@ -13,7 +13,7 @@ actual fun readFile(name: String): ByteArray {
         input = buffer.readBytes(fileSize)
     }
     fclose(file)
-    return input
+    return input.toUByteArray()
 }
 
 actual fun writeFile(name: String, data: String) {

@@ -1,6 +1,6 @@
 import writers.*
 
-expect fun readFile(name: String): ByteArray
+expect fun readFile(name: String): UByteArray
 expect fun writeFile(name: String, data: String)
 expect fun printlnErr(string: String?)
 
