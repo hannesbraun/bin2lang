@@ -5,7 +5,7 @@ class KotlinWriter(name: String) : Writer(name, "kt") {
         val langStrBuilder = StringBuilder()
 
         langStrBuilder.append("object $name {\n    ")
-        langStrBuilder.append("val bytes = listOf(\n        ")
+        langStrBuilder.append("val bytes = listOf<Byte>(\n        ")
         for ((i, byte) in bytes.withIndex()) {
             val hexString = byte.toString(16).padStart(2, '0')
             langStrBuilder.append("0x$hexString")
