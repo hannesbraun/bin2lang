@@ -4,8 +4,8 @@ class CWriter(name: String) : Writer(name, "h") {
     override fun toLang(): String {
         val langStrBuilder = StringBuilder()
 
-        langStrBuilder.append("#ifndef ${name.toUpperCase()}_${fileExtension.toUpperCase()}\n")
-        langStrBuilder.append("#define ${name.toUpperCase()}_${fileExtension.toUpperCase()}\n\n")
+        langStrBuilder.append("#ifndef ${name.uppercase()}_${fileExtension.uppercase()}\n")
+        langStrBuilder.append("#define ${name.uppercase()}_${fileExtension.uppercase()}\n\n")
 
         langStrBuilder.append("const int ${name}_length = ${bytes.size};\n\n")
         langStrBuilder.append("const unsigned char $name[${bytes.size}] = {\n    ")

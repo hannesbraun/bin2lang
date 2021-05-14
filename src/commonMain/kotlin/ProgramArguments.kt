@@ -5,7 +5,7 @@ class ProgramArguments(args: Array<String>) {
         }
     }
 
-    val language = args[0].toLowerCase()
+    val language = args[0].lowercase()
     val binaryFile = args[1]
     val target = args[2]
 }
