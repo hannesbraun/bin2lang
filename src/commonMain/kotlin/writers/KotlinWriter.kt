@@ -7,8 +7,7 @@ class KotlinWriter(name: String) : Writer(name, "kt") {
         langStrBuilder.append("object $name {\n    ")
         langStrBuilder.append("val bytes = listOf(\n        ")
         for ((i, byte) in bytes.withIndex()) {
-            val hexString = byte.toString(16).padStart(2, '0')
-            langStrBuilder.append("0x$hexString.toByte()")
+            langStrBuilder.append("${byte.hexString()}.toByte()")
 
             if (i + 1 < bytes.size) {
                 langStrBuilder.append(",")

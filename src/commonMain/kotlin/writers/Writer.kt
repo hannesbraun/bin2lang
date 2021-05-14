@@ -6,5 +6,5 @@ abstract class Writer(name: String, protected val fileExtension: String) {
     val filename = "$name.$fileExtension"
     abstract fun toLang(): String
 
-    protected fun uBytes() = bytes.toUByteArray()
+    fun UByte.hexString() = "0x${this.toString(16).padStart(2, '0')}"
 }

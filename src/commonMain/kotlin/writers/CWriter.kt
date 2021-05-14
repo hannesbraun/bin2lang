@@ -10,9 +10,8 @@ class CWriter(name: String) : Writer(name, "h") {
         langStrBuilder.append("const int ${name}_length = ${bytes.size};\n\n")
         langStrBuilder.append("const unsigned char $name[${bytes.size}] = {\n    ")
 
-        for ((i, byte) in uBytes().withIndex()) {
-            val hexString = byte.toString(16).padStart(2, '0')
-            langStrBuilder.append("0x$hexString")
+        for ((i, byte) in bytes.withIndex()) {
+            langStrBuilder.append(byte.hexString())
 
             if (i + 1 < bytes.size) {
                 langStrBuilder.append(",")
