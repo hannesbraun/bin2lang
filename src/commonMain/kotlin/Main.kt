@@ -14,6 +14,7 @@ fun main(args: Array<String>) {
 
     val writer = when (args1.language) {
         "c" -> CWriter(args1.target)
+        "go" -> GoWriter(args1.target)
         "java" -> JavaWriter(args1.target)
         "kotlin" -> KotlinWriter(args1.target)
         else -> {

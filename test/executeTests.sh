@@ -27,6 +27,7 @@ make
 java Main
 cd -
 
+# Kotlin
 $BIN2LANG kotlin randData RandomData
 rm kotlin/RandomData.kt
 mv RandomData.kt kotlin
@@ -35,8 +36,18 @@ make
 kotlin MainKt
 cd -
 
+# Go
+$BIN2LANG go randData randomData
+rm go/randomData.go
+mv randomData.go go
+cd go
+make
+./goTest
+cd -
+
 # Compare results (manually)
 shasum -a 512 randData
 shasum -a 512 cOutFile
 shasum -a 512 javaOutFile
 shasum -a 512 kotlinOutFile
+shasum -a 512 goOutFile
