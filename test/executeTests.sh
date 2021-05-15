@@ -45,9 +45,19 @@ make
 ./goTest
 cd -
 
+# Rust
+$BIN2LANG rust randData random_data
+rm rust/random_data.rs
+mv random_data.rs rust
+cd rust
+make
+./rustTest
+cd -
+
 # Compare results (manually)
 shasum -a 512 randData
 shasum -a 512 cOutFile
 shasum -a 512 javaOutFile
 shasum -a 512 kotlinOutFile
 shasum -a 512 goOutFile
+shasum -a 512 rustOutFile

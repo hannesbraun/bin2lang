@@ -17,6 +17,7 @@ fun main(args: Array<String>) {
         "go" -> GoWriter(args1.target)
         "java" -> JavaWriter(args1.target)
         "kotlin" -> KotlinWriter(args1.target)
+        "rust" -> RustWriter(args1.target)
         else -> {
             printlnErr("ERROR: unknown target: ${args1.target}")
             return
