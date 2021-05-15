@@ -29,6 +29,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib"))
+                implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.2")
             }
         }
         val desktopMain by creating {
