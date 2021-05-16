@@ -13,15 +13,17 @@ fun main(args: Array<String>) {
     val language by parser.argument(ArgType.String, description = "Language to convert the binary to")
     val binaryFile by parser.argument(ArgType.String, description = "Binary file to convert")
     val target by parser.argument(ArgType.String, description = "Target data structure name")
-    val verbose by parser.option(ArgType.Boolean, shortName = "v", description = "Turn on verbose mode").default(false)
+    val about by parser.option(ArgType.Boolean, description = "Show about message (includes the version of bin2lang)").default(false)
     parser.parse(args)
 
-    if (verbose) {
-        println("${Metadata.NAME} ${Metadata.VERSION}")
-        println("Copyright (C) 2021 Hannes Braun")
-        println()
+    // It's maybe kind of inconvenient to require specifying the usual arguments for printing the about message.
+    // But since this option won't effectively be used a lot anyway... I don't care for now. Maybe kotlinx-cli will provide a solution in the future.
+    if (about) {
         println(
             """
+            ${Metadata.NAME} ${Metadata.VERSION}
+            Copyright (C) 2021 Hannes Braun
+                
             This program is free software: you can redistribute it and/or modify
             it under the terms of the GNU General Public License as published by
             the Free Software Foundation, either version 3 of the License, or
@@ -34,7 +36,6 @@ fun main(args: Array<String>) {
 
             You should have received a copy of the GNU General Public License
             along with this program.  If not, see <https://www.gnu.org/licenses/>.
-            
         """.trimIndent()
         )
     }
