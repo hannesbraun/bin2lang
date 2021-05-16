@@ -50,7 +50,7 @@ fun main(args: Array<String>) {
         "kotlin" -> KotlinWriter(target)
         "rust" -> RustWriter(target)
         else -> {
-            printlnErr("ERROR: unknown target: $target")
+            printlnErr("ERROR: unknown language: $language")
             return
         }
     }
