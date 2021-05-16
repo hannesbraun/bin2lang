@@ -3,10 +3,6 @@ import kotlinx.cli.ArgType
 import kotlinx.cli.default
 import writers.*
 
-expect fun readFile(name: String): UByteArray
-expect fun writeFile(name: String, data: String)
-expect fun printlnErr(string: String?)
-
 object Metadata {
     const val NAME = "bin2lang"
     const val VERSION = "1.0.0-SNAPSHOT"
@@ -59,3 +55,10 @@ fun main(args: Array<String>) {
     val langString = writer.toLang()
     writeFile(writer.filename, langString)
 }
+
+expect fun readFile(name: String): UByteArray
+expect fun writeFile(name: String, data: String)
+expect fun printlnErr(string: String?)
+
+class ReadException(msg: String): Exception(msg)
+class WriteException(msg: String): Exception(msg)
