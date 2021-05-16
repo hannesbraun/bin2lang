@@ -5,7 +5,7 @@ import writers.*
 
 object Metadata {
     const val NAME = "bin2lang"
-    const val VERSION = "1.0.0-SNAPSHOT"
+    const val VERSION = "1.0.0"
 }
 
 fun main(args: Array<String>) {

@@ -2,19 +2,19 @@ plugins {
     kotlin("multiplatform") version "1.5.0"
 }
 
-version = "1.0.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
 }
 
 kotlin {
-    macosX64 {
+    linuxX64 {
         binaries {
             executable()
         }
     }
-    linuxX64 {
+    macosX64 {
         binaries {
             executable()
         }
@@ -38,10 +38,10 @@ kotlin {
         val linuxX64Main by getting {
             dependsOn(desktopMain)
         }
-        val mingwX64Main by getting {
+        val macosX64Main by getting {
             dependsOn(desktopMain)
         }
-        val macosX64Main by getting {
+        val mingwX64Main by getting {
             dependsOn(desktopMain)
         }
     }
