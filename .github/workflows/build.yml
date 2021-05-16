@@ -20,7 +20,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: bin2lang-win64
-          path: build\bin\mingwX64\releaseExecutable\bin2lang.kexe
+          path: build/bin/mingwX64/releaseExecutable/bin2lang.exe
 
   macosBuild:
     name: 'macOS Build'
