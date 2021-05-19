@@ -23,7 +23,6 @@ bin2lang <target language> <binary file> <target name>
 | Language | Language key | Notes |
 | -------- | ------------ | ----- |
 | C        | `c`          |       |
-| C++      | `c++`        | This is just added for convenience and does actually just the same as `c` does (no specific C++ code). |
 | Go       | `go`         | The default package is `main`. Change this according to your needs. |
 | Java     | `java`       |       |
 | Kotlin   | `kotlin`     |       |
