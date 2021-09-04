@@ -54,6 +54,15 @@ make
 ./rustTest
 cd -
 
+# Crystal
+$BIN2LANG crystal randData random_data
+rm crystal/random_data.cr
+mv random_data.cr crystal
+cd crystal
+make
+./crystalTest
+cd -
+
 # Compare results (manually)
 shasum -a 512 randData
 shasum -a 512 cOutFile
@@ -61,3 +70,4 @@ shasum -a 512 javaOutFile
 shasum -a 512 kotlinOutFile
 shasum -a 512 goOutFile
 shasum -a 512 rustOutFile
+shasum -a 512 crystalOutFile

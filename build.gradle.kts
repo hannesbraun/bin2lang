@@ -2,7 +2,7 @@ plugins {
     kotlin("multiplatform") version "1.5.30"
 }
 
-version = "1.0.0"
+version = "1.1.0"
 
 repositories {
     mavenCentral()

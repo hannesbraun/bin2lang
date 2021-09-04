@@ -23,6 +23,7 @@ bin2lang <target language> <binary file> <target name>
 | Language | Language key | Notes |
 | -------- | ------------ | ----- |
 | C        | `c`          |       |
+| Crystal  | `crystal`    |       |
 | Go       | `go`         | The default package is `main`. Change this according to your needs. |
 | Java     | `java`       |       |
 | Kotlin   | `kotlin`     |       |

@@ -5,7 +5,7 @@ import writers.*
 
 object Metadata {
     const val NAME = "bin2lang"
-    const val VERSION = "1.0.0"
+    const val VERSION = "1.1.0"
 }
 
 fun main(args: Array<String>) {
@@ -42,6 +42,7 @@ fun main(args: Array<String>) {
 
     val writer = when (language) {
         "c" -> CWriter(target)
+        "crystal" -> CrystalWriter(target)
         "go" -> GoWriter(target)
         "java" -> JavaWriter(target)
         "kotlin" -> KotlinWriter(target)
